@@ -1,0 +1,58 @@
+<div class="loader" *ngIf="isFetching && !errormessage">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<div class="container">
+  <div
+    class="match"
+    *ngFor="let team of teamsKabadi"
+    (click)="ShowNextPage(team)"
+  >
+    <div *ngIf="team.MatchStatus == 'Upcoming'">
+      <div class="match-header">
+        <div class="match-tournament">
+          {{ team.League }} | {{ team.MatchNumber }} | {{ team.Date }} |
+          {{ team.Time }}
+        </div>
+        <div
+          class="match-status"
+          [ngClass]="{ ended: team.MatchStatus !== 'Live' }"
+        >
+          {{ team.Status }}
+        </div>
+      </div>
+      <div class="match-content">
+        <div class="column">
+          <div class="team team--home">
+            <div class="team-logo">
+              <img src="{{ team.ImageA }}" />
+            </div>
+            <h2 class="team-name">{{ team.TeamA }}</h2>
+          </div>
+        </div>
+        <div class="column">
+          <div class="match-details">
+            <div class="match-score">
+              <span class="match-score-number">{{ team.PointA }}</span>
+              <span class="match-score-divider">:</span>
+              <span class="match-score-number">{{ team.PointB }}</span>
+            </div>
+            <div class="match-time-lapsed">{{ team.MatchStatus }}</div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="team team--away">
+            <div class="team-logo">
+              <img src="{{ team.ImageB }}" />
+            </div>
+            <h2 class="team-name">{{ team.TeamB }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div>
+<span *ngIf="NoUpcoming" class="NoUpcoming">
+  <h1>No Upcoming Matches</h1>
+</span> -->
+  <router-outlet></router-outlet>
+</div>

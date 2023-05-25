@@ -1,0 +1,59 @@
+<div class="loader" *ngIf="isFetching && !errormessage">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<div class="Card">
+  <div class="sports" *ngFor="let team of teamsFootball">
+    <div *ngIf="team.MatchStatus == 'Live'">
+      <div class="sports-header">
+        <div class="sports-tournament">
+          {{ team.League }}| {{ team.Date }} |
+          {{ team.Time }}
+        </div>
+        <div
+          class="sports-status"
+          [ngClass]="{ ended: team.MatchStatus !== 'Live' }"
+        >
+          {{ team.Status }}
+        </div>
+      </div>
+      <div class="sports-content">
+        <div class="column">
+          <div class="team teamA">
+            <div class="team-logo">
+              <img src="{{ team.ImageA }}" />
+            </div>
+            <h2 class="team-name">{{ team.TeamA }}</h2>
+            <div *ngIf="team.GoalA == '1'">
+              <h2 class="goal">Neymar (36')<img src="" /></h2>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="sports-details">
+            <div class="sports-date">
+              {{ team.Date }} at <strong>{{ team.Time }}</strong>
+            </div>
+            <div class="sports-score">
+              <span class="sports-score-number">{{ team.GoalA }}</span>
+              <span class="sports-score-divider">:</span>
+              <span class="sports-score-number">{{ team.GoalB }}</span>
+            </div>
+            <div class="sports-time-lapsed">{{ team.MatchStatus }}'</div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="team teamB">
+            <div class="team-logo">
+              <img src="{{ team.ImageB }}" />
+            </div>
+            <h2 class="team-name">{{ team.TeamB }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <span *ngIf="NoLive" class="NoLive">
+  <h1>No Live Matches</h1>
+</span> -->
+<router-outlet></router-outlet>

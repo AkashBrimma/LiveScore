@@ -1,0 +1,281 @@
+<div>
+  <div *ngFor="let team of teams">
+    <h3>
+      {{ team.TeamA }} _
+      <span class="col"
+        >{{ team.ScoreA }}/{{ team.WicketA }} ({{ team.OverA }})</span
+      >
+    </h3>
+    <h3>
+      {{ team.TeamB }} _
+
+      <span class="colo"
+        >{{ team.ScoreB }}/{{ team.WicketB }} ({{ team.OverB }})</span
+      >
+    </h3>
+
+    <div class="button">
+      <button id="but" (click)="showFirstTable()">{{ team.TeamA }}</button>
+      <button id="but" (click)="showSecondTable()">{{ team.TeamB }}</button>
+    </div>
+  </div>
+  <div *ngIf="showTable1">
+    <table *ngFor="let a of player">
+      <tr>
+        <th>Batting</th>
+        <th>R(B)</th>
+        <th>4s</th>
+        <th>6s</th>
+        <th>SR</th>
+      </tr>
+      <tr>
+        <td>
+          {{ a.Player1 }}
+        </td>
+        <td>1(2)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player2 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player3 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player4 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player5 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player6 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player7 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player8 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player9 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player10 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player11 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="showTable2">
+    <table *ngFor="let a of playerB">
+      <tr>
+        <th>Batting</th>
+        <th>R(B)</th>
+        <th>4s</th>
+        <th>6s</th>
+        <th>SR</th>
+      </tr>
+      <tr>
+        <td>
+          {{ a.Player1 }}
+        </td>
+        <td>1(2)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player2 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player3 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player4 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player5 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player6 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player7 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player8 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player9 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player10 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>{{ a.Player11 }}</td>
+        <td>3(8)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<!-- <div *ngFor="let team of teams">
+    <div class="split left">
+      <div class="centered">
+        <img src="../assets/Ima.png" alt="Avatar woman" />
+        <h2 class="team">
+          {{ team.teamA }} -
+          <span class="col"
+            >{{ team.scoreA }}/{{ team.wicketA }} ({{ team.overA }})</span
+          >
+        </h2>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Player
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <code>Rohit Sharama</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="split right">
+      <div class="centered">
+        <img src="../assets/imaa.png" alt="Avatar woman" />
+        <h2 class="team">
+          {{ team.teamB }} -
+          <span class="colo"
+            >{{ team.scoreB }}/{{ team.wicketB }} ({{ team.overB }})</span
+          >
+        </h2>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Player
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body">
+                <code>David Warner</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<router-outlet></router-outlet>

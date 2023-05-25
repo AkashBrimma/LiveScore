@@ -1,0 +1,64 @@
+<div class="loader" *ngIf="isFetching && !errormessage">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<div class="Card">
+  <div
+    class="sports"
+    *ngFor="let team of Cricketteams"
+    (click)="ShowNextPage(team)"
+  >
+    <div *ngIf="team.MatchStatus == 'Live'">
+      <div class="sports-header">
+        <div class="sports-tournament">
+          {{ team.League }} | {{ team.Date }} |
+          {{ team.Time }}
+        </div>
+        <div
+          class="sports-status"
+          [ngClass]="{ ended: team.MatchStatus !== 'Live' }"
+        >
+          {{ team.MatchStatus }}
+        </div>
+      </div>
+      <div class="sports-content">
+        <div class="column">
+          <div class="team teamA">
+            <div class="team-logo">
+              <img src="{{ team.ImageA }}" />
+            </div>
+            <h2 class="team-name">
+              {{ team.TeamA }} - {{ team.ScoreA }}/{{ team.WicketA }}
+            </h2>
+            <h2 class="over">({{ team.OverA }} Ovs)</h2>
+          </div>
+        </div>
+        <div class="column">
+          <div class="sports-details">
+            <div class="sports-date">
+              <h2>Match:{{ team.MatchNumber }}</h2>
+            </div>
+            <div class="sports-score">
+              <span class="sports-score-divider">V/S</span>
+            </div>
+            <div class="sports-time-lapsed">{{ team.Category }}</div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="team teamB">
+            <div class="team-logo">
+              <img src="{{ team.ImageB }}" />
+            </div>
+            <h2 class="team-name">
+              {{ team.TeamB }} - {{ team.ScoreB }}/{{ team.WicketB }}
+            </h2>
+            <h2 class="over">({{ team.OverB }} Ovs)</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <span *ngIf="NoLive" class="NoLive">
+  <h1>No Live Matches</h1>
+</span> -->
+<router-outlet></router-outlet>

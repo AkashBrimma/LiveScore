@@ -1,0 +1,45 @@
+ngb-carousel .wrapper {
+  position: relative;
+  height: 0;
+  padding-top: 55%; /* Keep ratio for 900x500 images */
+}
+
+ngb-carousel .wrapper > img {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.card {
+  margin: 20px 350px;
+  display: flex;
+}
+.football_imag {
+  width: 50px;
+}
+.player {
+  width: 525px;
+  border-radius: 25px;
+}
+.blockquote-footer {
+  color: black;
+}
+.footer {
+  margin-top: 20px;
+  font-weight: bold;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+.card-header {
+  display: flex;
+}
+.see {
+  padding-left: 65%;
+  margin-top: 15px;
+}
+.foot{
+  margin-top: 15px;
+}

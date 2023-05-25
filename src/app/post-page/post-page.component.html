@@ -1,0 +1,75 @@
+
+<form   (ngSubmit) = "onSubmit()">
+
+
+<table>
+
+
+  <tr>
+    <td><label>MatchNumber:</label></td>
+    <td><input type="text" [(ngModel)]="MatchNumber" name="MatchNumber" /></td>
+    <td style="width: 40%"></td>
+    <td><label>Match_Status:</label></td>
+    <td>
+      <input type="text" [(ngModel)]="MatchStatus" name="MatchStatus" /><br />
+    </td>
+  </tr>
+
+  <tr>
+    <td><label>TeamA:</label></td>
+    <td><input type="text" [(ngModel)]="TeamA" name="TeamA" /></td>
+    <td style="width: 40%"></td>
+    <td><label>TeamB:</label></td>
+    <td><input type="text" [(ngModel)]="TeamB" name="TeamB" /><br /></td>
+  </tr>
+  <tr>
+    <td><label>ScoreA:</label></td>
+    <td><input type="text" [(ngModel)]="ScoreA" name="ScoreA" /></td>
+    <td style="width: 40%"></td>
+    <td><label>ScoreB:</label></td>
+    <td><input type="text" [(ngModel)]="ScoreB" name="ScoreB" /><br /></td>
+  </tr>
+
+  <tr>
+    <td><label>OverA:</label></td>
+    <td><input type="text" [(ngModel)]="OverA" name="OverA" /></td>
+    <td style="width: 40%"></td>
+    <td><label>OverB:</label></td>
+    <td><input type="text" [(ngModel)]="OverB" name="OverB" /><br /></td>
+  </tr>
+
+  <tr>
+    <td><label>WicketA:</label></td>
+    <td><input type="text" [(ngModel)]="WicketA" name="WicketA" /></td>
+    <td style="width: 40%"></td>
+    <td><label>WicketB:</label></td>
+    <td><input type="text" [(ngModel)]="WicketB" name="WicketB" /><br /></td>
+  </tr>
+
+  <tr>
+    <td><label>ImageA:</label></td>
+    <td><input type="text" [(ngModel)]="ImageA" name="ImageA" /></td>
+    <td style="width: 40%"></td>
+    <td><label>ImageB:</label></td>
+    <td><input type="text" [(ngModel)]="ImageB" name="ImageB" /><br /></td>
+  </tr>
+
+  <tr>
+    <td><label>Date:</label></td>
+    <td><input type="text" [(ngModel)]="Date" name="Date" /></td>
+    <td style="width: 40%"></td>
+    <td><label>Time:</label></td>
+    <td><input type="text" [(ngModel)]="Time" name="Time" /><br /></td>
+  </tr>
+
+  <tr>
+    <td><label>Category:</label></td>
+    <td><input type="text" [(ngModel)]="Category" name="Category" /></td>
+    <td style="width: 40%"></td>
+    <td><label>League:</label></td>
+    <td><input type="text" [(ngModel)]="League" name="League" /><br /></td>
+  </tr>
+  <button type="submit"   >Submit</button>
+</table>
+
+</form>

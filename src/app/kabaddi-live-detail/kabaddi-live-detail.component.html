@@ -1,0 +1,315 @@
+<div class="container">
+  <div class="match" *ngFor="let team of teams">
+    <div *ngIf="team.MatchStatus == 'Live' || 'Ended' || 'Upcoming'">
+      <div class="match-header">
+        <div class="match-tournament">
+          {{ team.League }} | {{ team.MatchNumber }} | {{ team.Date }} |
+          {{ team.Time }}
+        </div>
+        <div
+          class="match-status"
+          [ngClass]="{ ended: team.MatchStatus !== 'Live' }"
+        >
+          {{ team.MatchStatus }}
+        </div>
+      </div>
+      <div class="match-content">
+        <div class="column">
+          <div class="team team--home">
+            <div class="team-logo">
+              <img src="{{ team.ImageA }}" />
+            </div>
+            <h2 class="team-name">{{ team.TeamA }}</h2>
+          </div>
+        </div>
+        <div class="column">
+          <div class="match-details">
+            <div class="match-score">
+              <span class="match-score-number">{{ team.PointA }}</span>
+              <span class="match-score-divider">:</span>
+              <span class="match-score-number">{{ team.PointB }}</span>
+            </div>
+            <div class="match-time-lapsed">{{ team.MatchStatus }}</div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="team team--away">
+            <div class="team-logo">
+              <img src="{{ team.ImageB }}" />
+            </div>
+            <h2 class="team-name">{{ team.TeamB }}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="button">
+      <button id="but" (click)="showFirstTable()">{{ team.TeamA }}</button>
+      <button id="but" (click)="showSecondTable()">{{ team.TeamB }}</button>
+    </div>
+    <div *ngIf="showTable1">
+      <table *ngFor="let a of playerA">
+        <tr>
+          <th>Starters</th>
+          <th>Touch Points</th>
+          <th>Bonus Points</th>
+          <th>Raid Points</th>
+          <th>Tackle Points</th>
+          <th>Points</th>
+        </tr>
+        <tr>
+          <td>{{ a.playerA1 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerA2 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerA3 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerA4 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerA5 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerA6 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerA7 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Substitute</th>
+          <th>Touch Points</th>
+          <th>Bonus Points</th>
+          <th>Raid Points</th>
+          <th>Tackle Points</th>
+          <th>Points</th>
+        </tr>
+        <tr>
+          <td>{{ a.playerAS1 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerAS2 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerAS3 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerAS4 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerAS5 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerAS6 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerAS7 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+
+    <div *ngIf="showTable2">
+      <table *ngFor="let a of playerB">
+        <tr>
+          <th>Starters</th>
+          <th>Touch Points</th>
+          <th>Bonus Points</th>
+          <th>Raid Points</th>
+          <th>Tackle Points</th>
+          <th>Points</th>
+        </tr>
+        <tr>
+          <td>{{ a.playerB1 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerB2 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerB3 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerB4 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerB5 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerB6 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerB7 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Substitute</th>
+          <th>Touch Points</th>
+          <th>Bonus Points</th>
+          <th>Raid Points</th>
+          <th>Tackle Points</th>
+          <th>Points</th>
+        </tr>
+        <tr>
+          <td>{{ a.playerBS1 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerBS2 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerBS3 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerBS4 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerBS5 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerBS6 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{ a.playerBS7 }}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
